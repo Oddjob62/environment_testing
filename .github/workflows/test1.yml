@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           echo "Before Secret"
-          if [[ $SECRET_VALUE == 'thispassword']]
+          if [ $SECRET_VALUE == 'thispassword']
           then
             echo "correct"
           fi
