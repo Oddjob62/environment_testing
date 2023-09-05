@@ -1,0 +1,24 @@
+name: "bashtest"
+
+on:
+  workflow_dispatch:
+    inputs:
+      secret_input:
+        description: This is a secret
+        required: true
+
+jobs:
+  Test_Bash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TestBash
+        shell: bash
+        run: |
+          echo "Before Secret"
+          if [[ $SECRET_VALUE == 'thispassword']]
+          then
+            echo "correct"
+          fi
+          echo "After Secret"
+        env:
+          SECRET_VALUE: ${{secrets[github.event.inputs.secret_input]}}
