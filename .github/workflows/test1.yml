@@ -18,6 +18,8 @@ jobs:
           if [ $SECRET_VALUE == 'thispassword']
           then
             echo "correct"
+          else
+            echo "incorrect"
           fi
           echo "After Secret"
         env:
