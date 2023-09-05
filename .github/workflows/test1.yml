@@ -21,4 +21,4 @@ jobs:
           fi
           echo "After Secret"
         env:
-          SECRET_VALUE: github.event.inputs.secret_input
+          SECRET_VALUE: ${{github.event.inputs.secret_input}}
