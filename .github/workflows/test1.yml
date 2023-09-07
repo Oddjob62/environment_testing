@@ -7,7 +7,7 @@ on:
   #   inputs:
   #     secret_input:
   #       description: This is a secret
-  #       required: true
+  #       required: true #
 
 jobs:
   Test_Bash:
