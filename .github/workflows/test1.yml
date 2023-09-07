@@ -29,5 +29,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: | 
           echo "running on main branch"
+      - name: NotMainTest
+        shell: bash
+        if: github.ref != 'refs/heads/main'
+        run: | 
+          echo "NOT running on main branch"
         
   
