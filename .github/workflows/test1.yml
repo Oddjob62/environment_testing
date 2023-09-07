@@ -1,13 +1,11 @@
 name: "bashtest"
 
 on:
-  pull_request:
-      types: [opened]
-  # workflow_dispatch:
-  #   inputs:
-  #     secret_input:
-  #       description: This is a secret
-  #       required: true
+  workflow_dispatch:
+    inputs:
+      secret_input:
+        description: This is a secret
+        required: true
 
 jobs:
   Test_Bash:
@@ -26,3 +24,10 @@ jobs:
           echo "After Secret"
         env:
           SECRET_VALUE: ${{github.event.inputs.secret_input}}
+      - name: MainTest
+        shell: bash
+        if: github.ref == 'refs/heads/main'
+        run: | 
+          echo "running on main branch"
+        
+  
