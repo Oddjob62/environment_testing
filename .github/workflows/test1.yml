@@ -1,11 +1,13 @@
 name: "bashtest"
 
 on:
-  workflow_dispatch:
-    inputs:
-      secret_input:
-        description: This is a secret
-        required: true
+  pull_request:
+      types: [opened]
+  # workflow_dispatch:
+  #   inputs:
+  #     secret_input:
+  #       description: This is a secret
+  #       required: true
 
 jobs:
   Test_Bash:
