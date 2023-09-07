@@ -28,11 +28,11 @@ jobs:
         shell: bash
         if: github.ref == 'refs/heads/main'
         run: | 
-          echo "running on main branch"
+          echo 'DOING DANGEROUS CHANGES!!!!!' >> $GITHUB_STEP_SUMMARY
       - name: NotMainTest
         shell: bash
         if: github.ref != 'refs/heads/main'
         run: | 
-          echo "NOT running on main branch"
+          echo 'NOT running on main branch' >> $GITHUB_STEP_SUMMARY
         
   
