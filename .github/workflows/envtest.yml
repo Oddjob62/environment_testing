@@ -13,3 +13,7 @@ jobs:
       - name: Print hello world
         run: echo "Hello world!!"
         # quick edit
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }} 
