@@ -1,4 +1,4 @@
-name: W
+name: PushToMain_PROD
 on:
   push:
     branches:
