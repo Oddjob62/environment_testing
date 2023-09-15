@@ -1,0 +1,12 @@
+name: A test workflow title
+on:
+  push:
+  workflow_dispatch:
+  
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-20.04
+    environment: PROD
+    steps:
+      - name: Print hello world
+        run: echo "Hello world!"
