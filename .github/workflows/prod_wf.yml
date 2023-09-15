@@ -1,4 +1,4 @@
-name: A test workflow title
+name: W
 on:
   push:
     branches:
