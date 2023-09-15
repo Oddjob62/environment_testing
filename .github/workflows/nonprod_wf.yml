@@ -1,0 +1,23 @@
+name: PushToAny_NONPROD
+on:
+  push:
+    branches:
+  workflow_dispatch:
+  
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-20.04
+    environment: NONPROD
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Print hello me
+        run: echo "Hello $MY_NAME!!"
+        # quick edit
+        env:
+          MY_NAME: ${{ vars.MY_NAME}}
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          allow-no-subscriptions: true
