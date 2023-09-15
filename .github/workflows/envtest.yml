@@ -15,5 +15,5 @@ jobs:
         # quick edit
 
       - uses: azure/login@v1
-        env:
+        with:
           creds: ${{ secrets.AZURE_CREDENTIALS }} 
