@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Print hello me
-        run: echo "Hello $MY_NAME!!"
+        run: echo "Hello $MY_NAME!!" >> $GITHUB_SUMMARY
         # quick edit
         env:
           MY_NAME: ${{ vars.MY_NAME}}
