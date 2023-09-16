@@ -2,7 +2,8 @@ name: PushToMain_PROD
 on:
   pull_request:
     branches:
-      - 'main'
+      - 'production'
+      - 'non-production'
   workflow_dispatch:
   
 jobs:
