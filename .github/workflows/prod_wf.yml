@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  print-hello-world:
+  env_testing:
     runs-on: ubuntu-20.04
     environment: PROD
     steps:
