@@ -1,23 +1,29 @@
 name: PushToAny_NONPROD
 on:
-  push:
+  pull_request:
     branches:
-      - main
+      - 'production'
+      - 'non-production'
   workflow_dispatch:
-  
+
+# test
 jobs:
   print-hello-world:
     runs-on: ubuntu-20.04
     environment: NONPROD
     steps:
       - uses: actions/checkout@v3
+
+      - name: echo event name
+        run: echo "${{ github.event_name }}"
       
-      - name: Print hello me
+      - name: Run Plan
+        if: ${{ github.event_name == 'pull_request' }}
         run: echo "Run Terraform PLAN on NONPROD" >> $GITHUB_STEP_SUMMARY
         env:
           MY_NAME: ${{ vars.MY_NAME}}
 
-      - name: Print hello me
+      - name: Run Apply
         run: echo "Run Terraform APPLY on NONPROD" >> $GITHUB_STEP_SUMMARY
         env:
           MY_NAME: ${{ vars.MY_NAME}}
