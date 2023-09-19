@@ -1,0 +1,15 @@
+name: test_dispatch
+on:
+  pull_request:
+    branches:
+      - 'production'
+
+jobs:
+  env_testing:
+    runs-on: ubuntu-20.04
+    environment: PROD
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: echo event name
+        run: echo "${{ github.event_name }}"
